@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.MasterPage"
+             NavigationPage.HasNavigationBar="False"
+                  Icon="menu.png"
+             BackgroundColor="DarkRed">
+    <MasterDetailPage.Master>
+
+        <ContentPage Title="Menu"
+                     BackgroundColor="#e8e8e8">
+
+            <StackLayout Orientation="Vertical" 
+                         Padding="0,20,0,0">
+
+                <Image Source="epokasplashlogo.png"
+                       HeightRequest="85"
+                       WidthRequest="195"
+                       Margin="0,30,0,0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Tapped_EpokaEReMenu"
+                                              NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>
+
+                <ListView x:Name="MenuList"
+                          RowHeight="48"
+                          BackgroundColor="#e8e8e8"
+                          SeparatorVisibility="None"
+                          ItemSelected="Selected_MenuList">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Padding="20,10,0,10"
+                                             Spacing="15"
+                                             VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal">
+
+                                    <Image Source="{Binding Icon}"
+                                           VerticalOptions="Start"/>
+
+                                    <Label Text="{Binding Title}"
+                                           FontSize="Small"
+                                           VerticalOptions="Center"
+                                           TextColor="Black"/>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+                <StackLayout HorizontalOptions="EndAndExpand"
+                             VerticalOptions="End"
+                             Padding="8">
+                    <Image Source="settings.png"
+                           HeightRequest="25"
+                           WidthRequest="25">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="Tapped_Settings"
+                                                  NumberOfTapsRequired="1"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </StackLayout>
+
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+
+    <MasterDetailPage.Detail>
+        <NavigationPage/>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

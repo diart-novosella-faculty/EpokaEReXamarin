@@ -1,0 +1,317 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App3;"
+             xmlns:controls="clr-namespace:App3;assembly=App3"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="App3.MainPage"
+             Title="Ballina">
+
+    <!--<NavigationPage.TitleView>
+
+        <StackLayout HorizontalOptions="End" Orientation="Horizontal">
+            <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+        </StackLayout>
+
+    </NavigationPage.TitleView>-->
+
+    <!--<ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="epokaToolbar.png"  Priority="1"/>
+    </ContentPage.ToolbarItems>-->
+
+    <ListView x:Name="listView" 
+              HeightRequest="140"
+              RowHeight="115"
+              ItemSelected="Post_Clicked"
+              IsPullToRefreshEnabled="True"
+              CachingStrategy="RecycleElementAndDataTemplate"
+              Refreshing="ListView_Refreshing">
+
+        <ListView.Header>
+
+            <Grid Margin="0" x:Name="gridTest1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="250" />
+                    <RowDefinition Height="30"  />
+                    <RowDefinition Height="3"  />
+                    <RowDefinition Height="150"  />
+                    <RowDefinition Height="220" />
+                    <RowDefinition Height="220" />
+                    <RowDefinition Height="220" />
+                    <RowDefinition Height="30"  />
+                    <RowDefinition Height="3"  />
+                    <RowDefinition Height="150"  />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <AbsoluteLayout Grid.Row="0" Grid.ColumnSpan="2">
+                    <AbsoluteLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Slider_Tapped"
+                                              NumberOfTapsRequired="1"/>
+                    </AbsoluteLayout.GestureRecognizers>
+
+                    <ImageButton x:Name="sliderImage"
+                                 Source="{Binding Image}" 
+                                 Aspect="AspectFill" 
+                                 AbsoluteLayout.LayoutBounds="1,1,1,1" 
+                                 AbsoluteLayout.LayoutFlags="All"/>
+
+                    <BoxView AbsoluteLayout.LayoutBounds="0, 1, 1, 0.35" 
+                             AbsoluteLayout.LayoutFlags="All" 
+                             BackgroundColor="Black" 
+                             Opacity="0.3"/>
+
+                    <Label x:Name="lblSlider" 
+                           Text="{Binding Title}"
+                           TextColor="White"
+                           FontSize="Medium"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"
+                           AbsoluteLayout.LayoutBounds="1, 1, 1, 0.32" 
+                           AbsoluteLayout.LayoutFlags="All"/>
+
+                    <ImageButton Clicked="ImgLeft_Clicked"
+                                 Source="leftnav.png" 
+                                 BackgroundColor="Transparent"
+                                 AbsoluteLayout.LayoutBounds="0.01, 0.5, 60, 250" 
+                                 AbsoluteLayout.LayoutFlags="PositionProportional" />
+
+                    <ImageButton Clicked="ImgRight_Clicked"
+                                 Source="rightnav.png" 
+                                 BackgroundColor="Transparent" 
+                                 AbsoluteLayout.LayoutBounds="0.99, 0.5, 60, 250" 
+                                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
+                </AbsoluteLayout>
+
+                <Label   Grid.Row="1" Grid.ColumnSpan="2" Text="Të Fundit" FontFamily="Segoe" FontSize="Small" FontAttributes="Bold" TextColor="#9e0a0a" Margin="10, 10, 0, 0"/>
+                <BoxView Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="#b91d47"/>
+
+                <StackLayout Grid.Row="3"  Grid.ColumnSpan="2">
+                    <forms:CarouselView x:Name="carouselAdsRow3">
+                        <forms:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}" Aspect="Fill"/>
+                            </DataTemplate>
+                        </forms:CarouselView.ItemTemplate>
+                    </forms:CarouselView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="0" ClassId="1" >
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid1"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill" 
+                           HeightRequest="110"
+                           Margin="2"/>
+
+                    <Label x:Name="lblGrid1" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblDate1" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="4" Grid.Column="1" ClassId="2" >
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid2"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid2" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblDate2" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="5" Grid.Column="0"  ClassId="3">
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid3"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid3" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblDate3" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="5" Grid.Column="1" ClassId="4">
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid4"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid4" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblDate4" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="6" Grid.Column="0" ClassId="5" >
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid5"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid5" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblDate5" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="6" Grid.Column="1" ClassId="6">
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid6"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid6" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblDate6" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <Label   Grid.Row="7" Grid.ColumnSpan="2" Text="Të Tjera" TextColor="#9e0a0a" FontFamily="Segoe" FontSize="Small" FontAttributes="Bold" Margin="10, 10, 0, 0"/>
+                <BoxView Grid.Row="8" Grid.ColumnSpan="2" BackgroundColor="#b91d47" />
+
+                <StackLayout Grid.Row="9"  Grid.ColumnSpan="2">
+                    <forms:CarouselView x:Name="carouselAdsRow9">
+                        <forms:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}"/>
+                            </DataTemplate>
+                        </forms:CarouselView.ItemTemplate>
+                    </forms:CarouselView>
+                </StackLayout>
+
+            </Grid>
+
+        </ListView.Header>
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell Height="350" x:Name="_viewCell">
+                    <StackLayout  Orientation="Horizontal" Padding="10" Margin="3" BackgroundColor="White">
+                        
+                        <Image Source="{Binding Image}" Aspect="Fill" HeightRequest="30" WidthRequest="110"/>
+                        <BoxView BackgroundColor="#f1d671" WidthRequest="3" VerticalOptions="FillAndExpand" HorizontalOptions="Start" />
+                        <StackLayout HorizontalOptions="FillAndExpand" Margin="2,0,0,0">
+                            <Label Text="{Binding Title}" TextColor="#2b5797" FontSize="12" FontAttributes="Bold"  FontFamily="Segoe"/>
+                            <Label Text="{Binding CategoryName}"  TextColor="DarkRed" FontSize="Micro"  FontFamily="Segoe"/>
+                            <Label Text="{Binding Date}" TextColor="#cbcbc9" FontSize="Micro"  FontFamily="Segoe" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                        </StackLayout>
+              
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+
+        <ListView.Footer>
+            <Label Text="2018 All Rights Reserved" HorizontalOptions="Center"/>
+        </ListView.Footer>
+
+    </ListView>
+
+</ContentPage>

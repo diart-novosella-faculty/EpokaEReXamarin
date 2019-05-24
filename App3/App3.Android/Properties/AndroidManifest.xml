@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" package="DD.EpokaeRe" android:installLocation="auto" android:versionCode="1" android:versionName="1.0">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="26" />
+	<uses-permission android:name="android.permission.WAKE_LOCK" />
+	<uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<application android:label="Epoka e Re" android:icon="@drawable/epokaIcon">
+		<activity android:name="com.google.android.gms.ads.AdActivity" android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize" />
+	</application>
+</manifest>

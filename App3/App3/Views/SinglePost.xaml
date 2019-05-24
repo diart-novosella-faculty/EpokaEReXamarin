@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Xamarin.Forms;assembly=Xamarin.Forms.CarouselView"
+             x:Class="App3.SinglePost"
+             Title="Kthehu Mbrapa">
+
+    <ScrollView>
+        <StackLayout>
+
+            <Image x:Name="contentImg" Source="{Binding Image}" Aspect="AspectFill" HeightRequest="220" />
+            <StackLayout Padding="12">
+                <Label Text="{Binding Title}" TextColor="#2b5797" FontSize="Large" FontAttributes="Bold" FontFamily="Segoe" />
+                <Label Text="{Binding Date}" HorizontalOptions="Start" />
+
+                <StackLayout Orientation="Horizontal" Margin="0,0,0,20">
+                    <ImageButton Source="facebook.png" Clicked="BtnFb_Clicked" HorizontalOptions="Start"    HeightRequest="40" WidthRequest="40" />
+                    <ImageButton Source="epokaWeb.png" Clicked="BtnEpoka_Clicked" HorizontalOptions="Start" HeightRequest="40" WidthRequest="40"/>
+                </StackLayout>
+
+                <Label Text="{Binding Content}" TextColor="Black" FontSize="18" FontFamily="Segoe" />
+            </StackLayout>
+
+            <StackLayout HeightRequest="150">
+                <forms:CarouselView x:Name="carouselAdsRow3">
+                    <forms:CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding .}"/>
+                        </DataTemplate>
+                    </forms:CarouselView.ItemTemplate>
+                </forms:CarouselView>
+            </StackLayout>
+
+            <StackLayout Padding="15, 10, 0, 0">
+                <Label Text="Të Fundit" TextColor="#7b241c" FontFamily="Segoe" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+            <BoxView HeightRequest="5" BackgroundColor="#9e0a0a" />
+
+
+            <Grid Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150"  />
+                    <RowDefinition Height="220" />
+                    <RowDefinition Height="220" />
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Row="0" Grid.ColumnSpan="2">
+                    <forms:CarouselView x:Name="carouselAdsRow4">
+                        <forms:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}"/>
+                            </DataTemplate>
+                        </forms:CarouselView.ItemTemplate>
+                    </forms:CarouselView>
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="0" ClassId="1" >
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid1"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill" 
+                           HeightRequest="110"
+                           Margin="2"/>
+
+                    <Label x:Name="lblGrid1" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblGridDate1" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="1" Grid.Column="1" ClassId="2" >
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid2"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid2" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblGridDate2" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="0" ClassId="3">
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid3"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid3" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblGridDate3" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Row="2" Grid.Column="1" ClassId="4">
+
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Grid_Tapped" NumberOfTapsRequired="1"/>
+                    </StackLayout.GestureRecognizers>
+
+                    <Image x:Name="grid4"
+                           Source="{Binding Image}" 
+                           Aspect="AspectFill"
+                           HeightRequest="110"
+                           Margin="2" />
+
+                    <Label x:Name="lblGrid4" 
+                           Text="{Binding Title}"
+                           TextColor="#2b5797"
+                           FontSize="14"
+                           FontAttributes="Bold"
+                           Margin="5,0,0,0"/>
+
+                    <Label x:Name="lblGridDate4" 
+                           Text="{Binding Date}"
+                           TextColor="#969696"
+                           FontSize="Micro"
+                           HorizontalOptions="End"
+                           VerticalOptions="EndAndExpand"
+                           Margin="5,0,5,0"/>
+
+                </StackLayout>
+                
+                <StackLayout Grid.Row="3" Grid.ColumnSpan="2">
+                    <forms:CarouselView x:Name="carouselAdsRow9">
+                        <forms:CarouselView.ItemTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding .}"/>
+                            </DataTemplate>
+                        </forms:CarouselView.ItemTemplate>
+                    </forms:CarouselView>
+                </StackLayout>
+
+            </Grid>
+
+            <StackLayout Padding="15, 10, 0, 0">
+                <Label Text="Të Tjera" TextColor="#7b241c" FontFamily="Segoe" FontSize="Medium" FontAttributes="Bold" />
+            </StackLayout>
+
+            <BoxView HeightRequest="5" BackgroundColor="#9e0a0a" />
+            
+            <StackLayout Orientation="Horizontal" Padding="8" Margin="3" BackgroundColor="White">
+
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TeFundit1_Tapped" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+
+                <Image x:Name="imgTeFundit1" Aspect="Fill" HeightRequest="100" WidthRequest="180"/>
+                <StackLayout HorizontalOptions="StartAndExpand" Margin="2,0,0,0">
+                    <Label x:Name="lblTitle1" TextColor="#2b5797" FontSize="Small" FontFamily="Segoe"/>
+                    <Label x:Name="lblDate1"  TextColor="#cbcbc9" FontSize="Micro" FontFamily="Segoe"/>
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="8" Margin="3" BackgroundColor="White">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TeFundit2_Tapped" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+                <Image  x:Name="imgTeFundit2" Aspect="Fill" HeightRequest="100" WidthRequest="180"/>
+                <StackLayout HorizontalOptions="StartAndExpand" Margin="2,0,0,0">
+                    <Label x:Name="lblTitle2" TextColor="#2b5797" FontSize="Small" FontFamily="Segoe" />
+                    <Label x:Name="lblDate2"  TextColor="#cbcbc9" FontSize="Micro" FontFamily="Segoe" />
+                </StackLayout>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal" Padding="8" Margin="3" BackgroundColor="White">
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TeFundit3_Tapped" NumberOfTapsRequired="1"/>
+                </StackLayout.GestureRecognizers>
+                <Image x:Name="imgTeFundit3" Aspect="Fill" HeightRequest="100" WidthRequest="180"/>
+                <StackLayout HorizontalOptions="StartAndExpand" Margin="2, 0, 0, 0">
+                    <Label x:Name="lblTitle3" TextColor="#2b5797" FontSize="Small" FontFamily="Segoe" />
+                    <Label x:Name="lblDate3"  TextColor="#cbcbc9" FontSize="Micro" FontFamily="Segoe" />
+                </StackLayout>
+            </StackLayout>
+
+            <BoxView HeightRequest="2" BackgroundColor="DarkGray" Margin="0, 25, 0, 0"></BoxView>
+            <Label Text="2018 All Rights Reserved" HorizontalOptions="Center"/>
+            
+        </StackLayout>
+
+    </ScrollView>
+
+</ContentPage>
